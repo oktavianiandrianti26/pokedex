@@ -20,10 +20,10 @@ async function fetchPokemon() {
 function PokemonCard(props) {
   return React.createElement(
     "div",
-    { className: "" },
-    React.createElement("img", { src: props.image, alt: props.name }),
-    React.createElement("h2", null, props.name),
-    React.createElement("p", null, `Type: ${props.types}`)
+    { className: "bg-green p-4 m-4 rounded-lg shadow-lg w-60" },
+    React.createElement("img", { src: props.image, alt: props.name, className: "w-full" }),
+    React.createElement("h2", { className: "text-xl font-bold text-center mt-2" }, props.name),
+    React.createElement("p", { className: "text-center text-gray-600" }, `Type: ${props.types}`)
   );
 }
 
@@ -32,7 +32,7 @@ function PokemonList() {
   if (pokemonData.length === 0) {
     return React.createElement(
       "p",
-      { className: "text-center" },
+      { className: "text-center text-xl text-gray-500 mt-10" },
       "Loading Pokemon data..."
     );
   }
@@ -55,13 +55,13 @@ function PokemonList() {
 function App() {
   return React.createElement(
     "div",
-    { className: "" },
+    { className: "container mx-auto p-4 min-h-screen" },
     React.createElement(
       "header",
-      { className: "" },
+      { className: "text-center mb-6" },
       React.createElement(
         "h1",
-        { className: "text-3xl text-center font-bold underline" },
+        { className: "text-4xl font-bold text-gray-800" },
         "Pokedex"
       )
     ),
